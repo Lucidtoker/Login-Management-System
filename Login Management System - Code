@@ -1,0 +1,66 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+string regUser, regPass;
+string user, pass;
+int choice;
+bool isRegistered = false;
+do
+{
+cout << "\n===== LOGIN MANAGEMENT SYSTEM =====" << endl;
+cout << "1. Register" << endl;
+cout << "2. Login" << endl;
+cout << "3. Exit" << endl;
+cout << "Enter your choice: ";
+cin >> choice;
+
+if (choice == 1)
+{
+cout << "\n--- Registration ---" << endl;
+cout << "Enter Username: ";
+cin >> regUser;
+cout << "Enter Password: ";
+cin >> regPass;
+isRegistered = true;
+cout << "Registration Successful!" << endl;
+}
+else if (choice == 2)
+{
+if (!isRegistered)
+{
+cout << "\nPlease register first!" << endl;
+}
+else
+{
+cout << "\n--- Login ---" << endl;
+cout << "Enter Username: ";
+cin >> user;
+cout << "Enter Password: ";
+cin >> pass;
+
+if (user == regUser && pass == regPass)
+{
+cout << "\nLogin Successful! Welcome " << user << endl;
+}
+else
+{
+cout << "\nInvalid Username or Password!" << endl;
+}
+}
+}
+else if (choice == 3)
+{
+cout << "\nThank you for using the system!" << endl;
+}
+else
+{
+cout << "\nInvalid choice! Try again." << endl;
+}
+
+} while (choice != 3);
+
+return 0;
+}
